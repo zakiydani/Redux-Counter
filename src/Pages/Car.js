@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addCar, minusCar } from "../Actions/carActions";
 
 const Car = (props) => {
-  console.log("props", props)
+  console.log("props", props);
   return (
     <div>
       <h1>Car</h1>
@@ -29,17 +29,18 @@ const Car = (props) => {
   );
 };
 
-const mapStateToProps = ({ car }) => {
+const mapStateToProps = (props) => {
+  console.log("Car", props);
   return {
-    car: car,
+    car: props.carReducers.car,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addCar: () => dispatch(addCar()),
-    minusCar: () => dispatch(minusCar())
-  }
-}
+    minusCar: () => dispatch(minusCar()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Car);

@@ -8,37 +8,39 @@ const Motor = (props) => {
     <div>
       <h1>Motor</h1>
       <h3>I have {props.motor} motor</h3>
-
-      <button
-        onClick={() => {
-          props.addMotor();
-        }}
-      >
-        +
-      </button>
-      {props.motor}
-      <button
-        onClick={() => {
-          props.minusMotor();
-        }}
-      >
-        -
-      </button>
+      <div>
+        <button
+          onClick={() => {
+            props.addMotor();
+          }}
+        >
+          +
+        </button>
+        {props.motor}
+        <button
+          onClick={() => {
+            props.minusMotor();
+          }}
+        >
+          -
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-const mapStateToProps = ({ motor }) => {
+const mapStateToProps = (props) => {
+  console.log("Motor", props);
   return {
-    motor: motor
-  }
-}
+    motor: props.motorReducers.motor,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addMotor: () => dispatch(addMotor()),
-    minusMotor: () => dispatch(minusMotor())
-  }
-}
+    minusMotor: () => dispatch(minusMotor()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Motor);

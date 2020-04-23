@@ -10,8 +10,8 @@ import Motor from "./Pages/Motor";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         <Header />
         <Switch>
           <Route exact path="/">
@@ -24,8 +24,8 @@ function App() {
             <Motor />
           </Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

@@ -15,11 +15,12 @@ const Home = (props) => {
   );
 };
 
-const mapStateToProps = ({car, motor}) => {
+const mapStateToProps = (props) => {
+  console.log("props", props);
   return {
-    car: car,
-    motor: motor,
-    total: car + motor,
+    car: props.carReducers.car,
+    motor: props.motorReducers.motor,
+    total: props.carReducers.car + props.motorReducers.motor,
   };
 };
 

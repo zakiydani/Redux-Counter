@@ -9,13 +9,13 @@ const carReducers = (state = initialState, action) => {
     case INCREMENT:
       return {
         ...state,
-        car: state.car + 1
-      }
+        car: state.car + 1,
+      };
     case DECREMENT:
       return {
         ...state,
-        car: state.car - 1
-      }
+        car: state.car - 1,
+      };
     default:
       return state;
   }
