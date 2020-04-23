@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from "../Actions/motorActions";
+import { INC, DEC } from "../Actions/motorActions";
 
 const initialState = {
   motor: 0,
@@ -6,12 +6,12 @@ const initialState = {
 
 const motorReducers = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT:
+    case INC:
       return {
         ...state,
         motor: state.motor + 1,
       };
-    case DECREMENT:
+    case DEC:
       return {
         ...state,
         motor: state.motor - 1,

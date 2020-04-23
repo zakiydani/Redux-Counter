@@ -1,14 +1,14 @@
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+export const INC = "INC";
+export const DEC = "DEC";
 
 export const addMotor = () => {
   return {
-    type: INCREMENT,
+    type: INC,
   };
 };
 
 export const minusMotor = () => {
   return {
-    type: DECREMENT,
+    type: DEC,
   };
 };
